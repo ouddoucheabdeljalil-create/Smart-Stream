@@ -5,6 +5,7 @@ export async function fetchData(){
          let response = await fetch (url); 
    
        let data = await response.json()
+       console.log(data)
        setDataLocaleSorage(data)
   
     }
