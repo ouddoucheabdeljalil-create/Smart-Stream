@@ -1,11 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/output.css">
+    <title>smart stream</title>
 </head>
-<body>
-    
+
+<body class="grid grid-cols-12 grid-rows-10 h-screen">
+    <header
+        class="flex justify-between items-center col-start-1 col-end-13 border bg-gradient-to-r from-[#080808] to-[#FF1010] border-solid">
+        <img src="assest/dodrarstreamlogo.png" alt="" class="h-15 pl-5">
+        <input type="search" name="search" id="search" placeholder="Recherche"
+            class="h-8 pl-6 mr-10 w-[40%] bg-amber-50 rounded-2xl">
+    </header>
+    <main class="grid grid-cols-12 grid-rows-10 row-start-2 bg-blue-600 row-end-11 col-start-1 col-end-13">
+        <section class="col-start-1 row-start-1">
+            <button id="btn-remove" class="h-15 w-15 bg-amber-500"></button>
+        </section>
+        <aside class="  bg-[#080808]  col-start-1 col-end-6 row-start-2 row-span-10 border border-r-amber-50">
+            <ul id="channel-space" class="overflow-auto h-full">
+                <!-- <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                 <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                  <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                   <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                    <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                     <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                      <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                       <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                        <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                         <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                          <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                           <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                            <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                             <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                              <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                               <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                 <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                  <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                   <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                    <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                     <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                      <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                       <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                        <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                         <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                         <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                 <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                  <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                   <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                    <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                     <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                      <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                       <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                        <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                         <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                          <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                           <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                            <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                             <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                              <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                               <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                 <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                  <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                   <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                    <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                     <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                      <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                       <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                        <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                         <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li> -->
+
+
+            </ul>
+        </aside>
+        <aside id="space-catregory" class=" bg-gradient-to-l from-[#080808] to-[#FF1010] col-start-1 col-end-4 row-start-2 row-span-10 hidden ">
+            <ul class="overflow-auto h-full">
+                <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                 <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                  <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                   <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                    <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                     <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                      <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                       <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                        <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                         <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                          <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                           <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                            <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                             <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                              <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                               <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                 <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                  <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                   <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                    <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                     <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                      <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                       <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                        <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+                                         <li class="text-2xl text-amber-50 border-amber-50 border text-center">12  2M Maroc</li>
+
+            </ul>
+        </aside>
+
+
+        <div class="flex justify-center items-center  bg-[#080808] col-start-6 col-end-13 row-start-1  row-span-7">
+            <div
+                class="bg-[url('/assest/banner.png')] bg-center rounded-2xl  border border-[#FF1010] w-[95%] h-[95%] ">
+                ff
+            </div>
+        </div>
+        <div class="bg-[#080808] col-start-6 col-end-13 row-start-8  row-span-10">
+
+        </div>
+
+    </main>
 </body>
+    <script type="module" src="js/main.js"></script>
 </html>
