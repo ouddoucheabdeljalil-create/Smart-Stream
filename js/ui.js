@@ -1,4 +1,5 @@
 import { getDataLocaleSorage } from "./storage.js";
+
 const channelsSpace = document.getElementById('channel-space')
 const spaceCategory = document.getElementById('space-catregory');
 const btnRemove = document.getElementById('btn-remove')
@@ -23,8 +24,8 @@ export function showChannels() {
     search.addEventListener('input', (e) => {
         channelsSpace.innerHTML = ''
         let x = search.value.toLowerCase()
-        
-        const filtered = data.filter(p => p.name.toLowerCase().includes(x) ||  p.channelNumber.toLowerCase().includes(x));
+
+        const filtered = data.filter(p => p.name.toLowerCase().includes(x) || p.channelNumber.toLowerCase().includes(x));
 
         filtered.forEach(element => {
             const list = document.createElement('li')
@@ -81,7 +82,7 @@ export function filterByCategory() {
         console.log(id)
         console.log(e.target)
 
-        if (e.target.id === 'tout' ) {
+        if (e.target.id === 'tout') {
             data.forEach(element => {
                 const list = document.createElement('li')
                 list.innerHTML = ` <li class="flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center"><span>${element.channelNumber}</span><span>${element.name}</span></li>`
@@ -104,4 +105,17 @@ export function filterByCategory() {
         }
 
     })
+}
+
+export function AddloadingSpin(){
+    const  spin = document.getElementById('spin')
+    spin.classList.add('loader')
+}
+export function loadingSearch(){
+    const  loadingSearch = document.getElementById('loading-search')
+    loadingSearch.classList.add('loader1')
+    // spaceCategory.innerHTML = ''
+    channelsSpace.innerHTML = ''
+    localStorage.clear()
+
 }
