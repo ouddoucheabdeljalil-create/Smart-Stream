@@ -4,7 +4,7 @@ const channelsSpace = document.getElementById('channel-space')
 const spaceCategory = document.getElementById('space-catregory');
 const btnRemove = document.getElementById('btn-remove')
 const catregoryPlace = document.getElementById('category-place')
-const search = document.getElementById('search')
+const search = document.getElementById('search-search')
 
 let data = getDataLocaleSorage()
 
@@ -21,12 +21,14 @@ export function showChannels() {
         channelsSpace.appendChild(list)
 
     });
-    search.addEventListener('input', (e) => {
+    search.addEventListener('input', () => {
         channelsSpace.innerHTML = ''
         let x = search.value.toLowerCase()
-
-        const filtered = data.filter(p => p.name.toLowerCase().includes(x) || p.channelNumber.toLowerCase().includes(x));
-
+        
+        
+        const filtered = data.filter(p => p.name.toLowerCase().includes(x) ||  p.channelNumber.toLowerCase().includes(x));
+        
+       console.log(filtered)
         filtered.forEach(element => {
             const list = document.createElement('li')
             list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
@@ -115,7 +117,7 @@ export function loadingSearch(){
     const  loadingSearch = document.getElementById('loading-search')
     loadingSearch.classList.add('loader1')
     // spaceCategory.innerHTML = ''
-    channelsSpace.innerHTML = ''
+    // channelsSpace.innerHTML = ''
     localStorage.clear()
 
 }
