@@ -15,6 +15,7 @@ export function showChannels() {
 
     data.forEach(element => {
         const list = document.createElement('li')
+        list.setAttribute('id', `list${element.id}`)
         list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
 
         list.innerHTML = `<span>${element.channelNumber}</span><span>${element.name}</span>`
@@ -24,11 +25,11 @@ export function showChannels() {
     search.addEventListener('input', () => {
         channelsSpace.innerHTML = ''
         let x = search.value.toLowerCase()
-        
-        
-        const filtered = data.filter(p => p.name.toLowerCase().includes(x) ||  p.channelNumber.toLowerCase().includes(x));
-        
-       console.log(filtered)
+
+
+        const filtered = data.filter(p => p.name.toLowerCase().includes(x) || p.channelNumber.toLowerCase().includes(x));
+
+        console.log(filtered)
         filtered.forEach(element => {
             const list = document.createElement('li')
             list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
@@ -87,9 +88,10 @@ export function filterByCategory() {
         if (e.target.id === 'tout') {
             data.forEach(element => {
                 const list = document.createElement('li')
-                list.innerHTML = ` <li class="flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center"><span>${element.channelNumber}</span><span>${element.name}</span></li>`
+                list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
+                list.innerHTML = ` <span>${element.channelNumber}</span><span>${element.name}</span>`
                 channelsSpace.appendChild(list)
-
+                 changeBgChannel()
             });
         }
         else {
@@ -99,9 +101,10 @@ export function filterByCategory() {
             channelsSpace.innerHTML = ''
             channels.forEach(element => {
                 const list = document.createElement('li')
-                list.innerHTML = ` <li class="flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center"><span>${element.channelNumber}</span><span>${element.name}</span></li>`
+                list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
+                list.innerHTML = ` <span>${element.channelNumber}</span><span>${element.name}</span>`
                 channelsSpace.appendChild(list)
-
+                changeBgChannel()
             });
 
         }
@@ -109,15 +112,31 @@ export function filterByCategory() {
     })
 }
 
-export function AddloadingSpin(){
-    const  spin = document.getElementById('spin')
+export function AddloadingSpin() {
+    const spin = document.getElementById('spin')
     spin.classList.add('loader')
 }
-export function loadingSearch(){
-    const  loadingSearch = document.getElementById('loading-search')
+export function loadingSearch() {
+    const loadingSearch = document.getElementById('loading-search')
     loadingSearch.classList.add('loader1')
     // spaceCategory.innerHTML = ''
     // channelsSpace.innerHTML = ''
     localStorage.clear()
 
+}
+export function changeBgChannel() {
+    const channels = document.querySelectorAll('.list')
+    // bg.addEventListener('click' , (e) => {
+    //     console.log(e.target)
+    // })
+
+    channels.forEach(channel => {
+        channel.addEventListener('click', (e) => {
+            console.log(e.target)
+            channels.forEach(chann => {
+                chann.classList.remove('bg-red-600')
+            })
+            channel.classList.add('bg-red-600')
+        })
+    })
 }
