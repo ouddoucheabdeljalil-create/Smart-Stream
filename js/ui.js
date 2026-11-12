@@ -5,7 +5,8 @@ const spaceCategory = document.getElementById('space-catregory');
 const btnRemove = document.getElementById('btn-remove')
 const catregoryPlace = document.getElementById('category-place')
 const search = document.getElementById('search-search')
-
+const showPlace = document.getElementById('show-place')
+const detailsPlace = document.getElementById('detais-space')
 let data = getDataLocaleSorage()
 
 export function showChannels() {
@@ -16,6 +17,7 @@ export function showChannels() {
     data.forEach(element => {
         const list = document.createElement('li')
         list.setAttribute('id', `list${element.id}`)
+        list.dataset.id= element.id
         list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
 
         list.innerHTML = `<span>${element.channelNumber}</span><span>${element.name}</span>`
@@ -32,6 +34,7 @@ export function showChannels() {
         console.log(filtered)
         filtered.forEach(element => {
             const list = document.createElement('li')
+            list.dataset.id= element.id
             list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
 
             list.innerHTML = `<span>${element.channelNumber}</span><span>${element.name}</span>`
@@ -88,6 +91,7 @@ export function filterByCategory() {
         if (e.target.id === 'tout') {
             data.forEach(element => {
                 const list = document.createElement('li')
+                list.dataset.id= element.id
                 list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
                 list.innerHTML = ` <span>${element.channelNumber}</span><span>${element.name}</span>`
                 channelsSpace.appendChild(list)
@@ -97,10 +101,11 @@ export function filterByCategory() {
         else {
             let channels = data.filter(e => e.category == id)
 
-            console.log(test)
+            
             channelsSpace.innerHTML = ''
             channels.forEach(element => {
                 const list = document.createElement('li')
+                list.dataset.id= element.id
                 list.className = `list flex flex-row justify-between px-8 text-2xl text-amber-50 border-amber-50 border text-center`
                 list.innerHTML = ` <span>${element.channelNumber}</span><span>${element.name}</span>`
                 channelsSpace.appendChild(list)
@@ -132,11 +137,61 @@ export function changeBgChannel() {
 
     channels.forEach(channel => {
         channel.addEventListener('click', (e) => {
-            console.log(e.target)
+           
             channels.forEach(chann => {
                 chann.classList.remove('bg-red-600')
             })
             channel.classList.add('bg-red-600')
         })
     })
+}
+export function showChannel(){
+    channelsSpace.addEventListener('click' , (e) => {
+        let channelsClass = e.target.closest('.list')
+        // console.log(x)
+        data.forEach(element => {
+            if(element.id === channelsClass.dataset.id){
+              showPlace.innerHTML =  `<img src="${element.previewImage}" alt="" class="w-full h-full rounded-2xl ">`
+            }
+            
+        })
+    })
+}
+export function showDetailsChannel(){
+    
+    channelsSpace.addEventListener('click' , (e) =>{
+        let channelsClass = e.target.closest('.list')
+        data.forEach(element => {
+            if(element.id === channelsClass.dataset.id){
+                detailsPlace.innerHTML = ` <div class="flex items-center justify-center rounded-2xl">
+                <img src="${element.logo}" alt="" class="w-40  h-40 rounded-2xl">
+            </div>
+            <div class="flex flex-col justify-around">
+                <div class="flex flex-col gap-8">
+
+                    <h2 class="text-2xl">${element.name}</h2>
+
+
+                    <div class=" font-roboto font-normal text-xl">
+                        <p>${element.epg.currentProgram}</p>
+
+                    </div>
+                </div>
+                <div class="font-roboto font-normal text-xl flex gap-8">
+                    <p>start : ${element.epg.startTime}</p>
+                    <p>end : ${element.epg.endTime
+}</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <div class="flex flex-col justify-center gap-2 h-20 pl-15 border-l border-l-white">
+                    <p class="border bg-amber-50 rounded-xl p-1 text-[#080808] text-center italic">FHD</p>
+                    <P class="border border-[#FF1010] rounded-xl p-1 text-[#FF1010]   ">ch. ${element.channelNumber}</P>
+                </div>
+            </div>`
+
+            }
+        })
+    })
+
 }
