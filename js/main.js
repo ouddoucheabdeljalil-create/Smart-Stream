@@ -7,6 +7,6 @@ showCategory()
 filterByCategory()
 changeBgChannel()
 removeHidden()
-// showChannel()
+
 showDetailsChannel()
 playStream()

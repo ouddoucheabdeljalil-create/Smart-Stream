@@ -145,18 +145,7 @@ export function changeBgChannel() {
         })
     })
 }
-// export function showChannel(){
-//     channelsSpace.addEventListener('click' , (e) => {
-//         let channelsClass = e.target.closest('.list')
-//         // console.log(x)
-//         data.forEach(element => {
-//             if(element.id === channelsClass.dataset.id){
-//               showPlace.innerHTML =  `<img src="${element.previewImage}" alt="" class="w-full h-full rounded-2xl ">`
-//             }
-            
-//         })
-//     })
-// }
+
 export function showDetailsChannel(){
     
     channelsSpace.addEventListener('click' , (e) =>{
