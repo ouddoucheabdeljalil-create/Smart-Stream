@@ -14,44 +14,47 @@
     <title>smart stream</title>
 </head>
 
-<body class="grid grid-cols-12 grid-rows-10 h-screen">
+<body class="flex flex-col  lg:grid grid-cols-12 grid-rows-10 h-screen">
     <header
         class="flex justify-between items-center col-start-1 col-end-13 border bg-gradient-to-r from-[#080808] to-[#FF1010] border-solid">
         <a href="index.html"><img src="assest/dodrarstreamlogo.png" alt="" class="h-15 pl-5"></a>
-        <input type="search" name="search" id="search-search" placeholder="Recherche"
-            class="h-8 pl-10 mr-10 w-[40%] bg-amber-50 rounded-2xl bg-[url('/assest/search.svg')] bg-left bg-size-[1.5rem]  bg-no-repeat bg-contain">
+
     </header>
-    <main class="grid grid-cols-12 grid-rows-14 row-start-2 bg-[#000] row-end-11 col-start-1 col-end-13">
-        <section class="flex items-center  row-start-1">
+    <main class=" flex flex-col gap-5 lg:grid lg:grid-cols-12 lg:grid-rows-14 row-start-2 row-end-11 col-span-12 overflow-auto bg-black">
+        <section class="flex gap-11 items-center  row-start-2  col-start-1 col-end-6">
             <button id="btn-remove"
                 class="h-12 w-12 bg-[url(/assest/right_panel.svg)] bg-center bg-no-repeat bg-contain"></button>
-        </section>
-        <aside class="  bg-[#080808]  col-start-1 col-end-6 row-start-2 row-span-13 border border-r-amber-50 ">
-            <span id="loading-search" class=""></span>
-            <ul id="channel-space" class="overflow-auto h-full">
-                
-            </ul>
 
-        </aside>
+            <input type="search" name="search" id="search-search" placeholder="Recherche"
+                class="pl-10 h-10 w-full mr-5 bg-amber-50 rounded-2xl bg-[url('/assest/search.svg')] bg-left bg-size-[1.5rem]  bg-no-repeat bg-contain">
+        </section>
         <aside id="space-catregory"
-            class=" bg-gradient-to-l from-[#080808] to-[#FF1010] col-start-1 col-end-4 row-start-2 row-span-13 hidden font-roboto ">
+            class="bg-gradient-to-l from-[#080808] to-[#FF1010] border-amber-50 border h-[50%] lg:h-auto lg:col-start-1 lg:col-end-4 lg:row-start-3 lg:row-span-20  ">
             <ul id="category-place" class="overflow-scroll h-full">
                 <li class="text-2xl text-amber-50 border-amber-50 border text-center" id="tout">tout</li>
             </ul>
         </aside>
+        <aside class="bg-[#080808] border h-[50%] lg:h-auto lg:col-start-1 lg:col-end-6 lg:row-start-3 lg:row-span-20 ">
+            <span id="loading-search" class=""></span>
+            <ul id="channel-space" class="overflow-auto h-full">
+
+            </ul>
+
+        </aside>
+        
 
 
-        <div class="flex justify-center items-center  bg-[#080808] col-start-6 col-end-13 row-start-2  row-span-9">
+        <div class="flex justify-center items-center bg-[#080808] w-full h-[250px] sm:h-[350px] lg:h-full lg:row-start-2 lg:row-span-11 lg:col-start-6 lg:col-end-13">
             <div id="show-place"
                 class="flex items-center justify-center rounded-2xl  border border-[#FF1010] w-[95%] h-full ">
                 <span id="spin" class=""></span>
                 <!-- <img src="assest/banner.png" alt="" class="w-full h-full rounded-2xl "> -->
-                 <video id="videoPlayer" src="" controls autoplay class="w-full h-full"></video>
+                <video id="videoPlayer" src="" controls autoplay class="w-full h-full rounded-2xl"></video>
             </div>
         </div>
         <div id="detais-space"
-            class="flex justify-around font- text-amber-50 font-montserrat font-bold  bg-[#080808] col-start-6 col-end-13 row-start-11  row-span-14">
-          
+            class="flex justify-around font- text-amber-50 font-montserrat font-bold  bg-[#080808] col-start-6 col-end-13 row-start-13  row-span-14">
+
         </div>
 
     </main>
