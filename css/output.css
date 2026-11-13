@@ -231,6 +231,9 @@
   .row-span-9 {
     grid-row: span 9 / span 9;
   }
+  .row-span-10 {
+    grid-row: span 10 / span 10;
+  }
   .row-span-11 {
     grid-row: span 11 / span 11;
   }
@@ -275,6 +278,9 @@
   }
   .row-start-13 {
     grid-row-start: 13;
+  }
+  .row-start-14 {
+    grid-row-start: 14;
   }
   .row-end-1 {
     grid-row-end: 1;
